@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: #d7d9e4;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    height: 59px;
+    padding-left: 78px;
+    font-size: 23px;
+    padding-top: 12px;
+    padding-right: 78px;
+}
+h1{
+  color: #2563EB;
+}
+ul{
+    display: flex;
+    color: #4D6374;
+    gap: 22px;
+    font-size: 19px;
+}
+.butom{
+  background: #F3F4F6;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    position: relative;
+    bottom: 5px;
+}
+ul li{
+  cursor: pointer;
+}
+.main{
+    margin: 31px 78px 0px 75px;
+    min-height: 100vh;
+}
+.heading{
+  display: flex;
+  justify-content: space-between;
+}
+.heading h1{
+  color: black;
+    font-size: 32px;
+    margin-top: -11px;
+}
+.heading button{
+      display: flex;
+    width: 134px;
+    gap: 5px;
+}
+#search{
+    width: 100%;
+    height: 42px;
+    margin-top: 37px;
+    padding-left: 15px;
+    border: 1px solid #E7E9EC;
+    font-size: 18px;
+    border-radius: 7px;
+}
+.card{
+    border: 1px solid #E7E9EC;
+    width: 47%;
+    height: 16rem;
+    margin-top: 39px;
+    background: white;
+    border-radius: 10px;
+}
+.head{
+    margin-left: 11px;
+    margin-top: 4px;
+    font-size: 23px;
+}
+.text{
+    color: #7a7e83;
+    margin-left: 11px;
+    margin-top: 11px;
+}
+.footer{
+    position: relative;
+    bottom: -138px;
+    height: 43px;
+    border-radius: 0px 0px 10px 10px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    color: #7a7e83;
+    justify-content: space-between;
+    padding: 0px 19px;
+}
+.cardcontainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+.delete svg{
+  width: 20px;
+}
+li{
+  display: flex;
+}
+li svg{
+  width: 20px;
+    position: relative;
+    bottom: 8px;
+    left: -4px;
+}
+.menu svg{
+  display: none;
+}
+
+
+@media  screen and (max-width:620px) {
+  ul{
+    display: none;
+  }
+  .menu svg{
+    display: block;
+    position: relative;
+    bottom: 6px;
+    color: #4D6374;
+    width: 30px;
+  }
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    height: 59px;
+    padding-left: 38px;
+    font-size: 23px;
+    padding-top: 12px;
+    padding-right: 54px;
+  }
+  .main{
+    margin: 31px 58px 0px 38px;
+    min-height: 100vh;
+  }
+  .heading{
+    display: block;
+  }
+  .card{
+    border: 1px solid #E7E9EC;
+    width: 101%;
+    height: 16rem;
+    margin-top: 39px;
+    background: white;
+    border-radius: 10px;
+  }
+}
