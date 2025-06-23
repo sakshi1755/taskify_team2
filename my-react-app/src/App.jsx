@@ -49,7 +49,6 @@ import Taskform from './Components/Taskform';
 
 function App() {
   return (
-    <>
     <Router>
       <Routes>
         <Route path="/" element={<Register />} />
@@ -57,12 +56,6 @@ function App() {
         <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
-
-    <div>
-        <Taskform />
-      </div>
-
-      </>
   );
 }
 
