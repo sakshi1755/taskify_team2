@@ -23,16 +23,20 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './Pages/Register';
 import Login from './Pages/Login';
+import Taskform from './Components/Taskform';
 
 function App() {
   return (
+    <>
     <Router>
       <Routes>
         <Route path="/" element={<Register />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/taskform" element={<Taskform />} />
       </Routes>
     </Router>
+    </>
   );
 }
 
