@@ -66,4 +66,8 @@ const TaskForm = () => {
   );
 };
 
+<<<<<<< HEAD
 export default TaskForm;
+=======
+export default TaskForm;
+>>>>>>> 777fc30 (added taskform)
