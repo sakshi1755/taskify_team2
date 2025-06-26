@@ -14,6 +14,7 @@ body{
     font-size: 23px;
     padding-top: 12px;
     padding-right: 78px;
+    margin-top: 89px;
 }
 h1{
   color: #2563EB;
@@ -22,20 +23,23 @@ ul{
     display: flex;
     color: #4D6374;
     gap: 22px;
-    font-size: 19px;
+    font-size: 16px;
 }
 .butom{
-  background: #F3F4F6;
+      background: #F3F4F6;
     height: 37px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 19px;
+    font-size: 16px;
     position: relative;
-    bottom: 5px;
+    bottom: 7px;
+    left: 3px;
+    width: 65px;
 }
 ul li{
   cursor: pointer;
+  margin-top: 7px;
 }
 .main{
     margin: 31px 78px 0px 75px;
@@ -52,8 +56,13 @@ ul li{
 }
 .heading button{
       display: flex;
-    width: 134px;
+    width: 112px;
     gap: 5px;
+    background: rgb(0,123,255);
+    padding: 5px;
+}
+.heading button:hover{
+  background: rgb(0,86,179);
 }
 #search{
     width: 100%;
@@ -66,8 +75,8 @@ ul li{
 }
 .card{
     border: 1px solid #E7E9EC;
-    width: 47%;
-    height: 16rem;
+    width: 31%;
+    height: 11rem;
     margin-top: 39px;
     background: white;
     border-radius: 10px;
@@ -84,7 +93,7 @@ ul li{
 }
 .footer{
     position: relative;
-    bottom: -138px;
+    bottom: -59px;
     height: 43px;
     border-radius: 0px 0px 10px 10px;
     background: #f5f5f5;
@@ -98,6 +107,9 @@ ul li{
   display: flex;
   flex-wrap: wrap;
 }
+.delete{
+  cursor: pointer;
+}
 .delete svg{
   width: 20px;
 }
@@ -107,7 +119,7 @@ li{
 li svg{
   width: 20px;
     position: relative;
-    bottom: 8px;
+    bottom: 9px;
     left: -4px;
 }
 .menu svg{

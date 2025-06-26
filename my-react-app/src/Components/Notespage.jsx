@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './notes.css'
+import Newnote from '../Pages/NewNotes'
 
 export default function Notespage() {
+  const[shownote, setnote] = useState(false)
+  const[note,addnotes] = useState([])
+
+  const adding = (note) =>{
+    addnotes(prev => [...prev,note])
+    setnote(false)
+  }
+  const deleteNote = (indexToDelete) => {
+    addnotes(prevNotes => prevNotes.filter((_, index) => index !== indexToDelete));
+};
+
   return (
     <>
     <div className="navbar">
@@ -38,10 +50,10 @@ export default function Notespage() {
       <div className="main">
         <div className="heading">
           <h1><b>My Notes</b></h1>
-          <button className='rounded py-2 px-4 bg-blue-600 text-white'>
+          <button className='rounded py-2 px-4 bg-blue-600 text-white' onClick = {()=>setnote(true)}>
             <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
+              <line x1="12" y1="7" x2="12" y2="17" />
+              <line x1="7" y1="12" x2="17" y2="12" />
             </svg>
             </span> New Note
           </button>
@@ -50,56 +62,23 @@ export default function Notespage() {
           <input className='rounded' type="search" placeholder="Search notes..." id="search" name='search' />
         </div>
         <div className="cardcontainer gap-x-8">
-          <div className="card">
-            <div className="head"><b>Project Requirements</b></div>
-            <div className="text">User Authentication Task Management Notes feature User profiles</div>
+        {note.map((note, index) => (
+          <div className="card" key={index}>
+            <div className='head'><b>{note.title}</b></div>
+            <div className='text'>{note.content.length > 100 ? note.content.slice(0, 100) + '...' : note.content}</div>
             <div className="footer">
-              <span className="date">3/10/2025</span>
-              <span className="delete">
+              <span className="date">{note.date}</span>
+              <span className="delete" onClick={()=>deleteNote(index)}>
                 <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16 6V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H11.2C10.0799 2 9.51984 2 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8 3.51984 8 4.0799 8 5.2V6M10 11.5V16.5M14 11.5V16.5M3 6H21M19 6V17.2C19 18.8802 19 19.7202 18.673 20.362C18.3854 20.9265 17.9265 21.3854 17.362 21.673C16.7202 22 15.8802 22 14.2 22H9.8C8.11984 22 7.27976 22 6.63803 21.673C6.07354 21.3854 5.6146 20.9265 5.32698 20.362C5 19.7202 5 18.8802 5 17.2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
             </div>
           </div>
-          <div className="card">
-            <div className="head"><b>Project Requirements</b></div>
-            <div className="text">User Authentication Task Management Notes feature User profiles</div>
-            <div className="footer">
-              <span className="date">3/10/2025</span>
-              <span className="delete">
-                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 6V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H11.2C10.0799 2 9.51984 2 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8 3.51984 8 4.0799 8 5.2V6M10 11.5V16.5M14 11.5V16.5M3 6H21M19 6V17.2C19 18.8802 19 19.7202 18.673 20.362C18.3854 20.9265 17.9265 21.3854 17.362 21.673C16.7202 22 15.8802 22 14.2 22H9.8C8.11984 22 7.27976 22 6.63803 21.673C6.07354 21.3854 5.6146 20.9265 5.32698 20.362C5 19.7202 5 18.8802 5 17.2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div className="card">
-            <div className="head"><b>Project Requirements</b></div>
-            <div className="text">User Authentication Task Management Notes feature User profiles</div>
-            <div className="footer">
-              <span className="date">3/10/2025</span>
-              <span className="delete">
-                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 6V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H11.2C10.0799 2 9.51984 2 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8 3.51984 8 4.0799 8 5.2V6M10 11.5V16.5M14 11.5V16.5M3 6H21M19 6V17.2C19 18.8802 19 19.7202 18.673 20.362C18.3854 20.9265 17.9265 21.3854 17.362 21.673C16.7202 22 15.8802 22 14.2 22H9.8C8.11984 22 7.27976 22 6.63803 21.673C6.07354 21.3854 5.6146 20.9265 5.32698 20.362C5 19.7202 5 18.8802 5 17.2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div className="card">
-            <div className="head"><b>Project Requirements</b></div>
-            <div className="text">User Authentication Task Management Notes feature User profiles</div>
-            <div className="footer">
-              <span className="date">3/10/2025</span>
-              <span className="delete">
-                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 6V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H11.2C10.0799 2 9.51984 2 9.09202 2.21799C8.71569 2.40973 8.40973 2.71569 8.21799 3.09202C8 3.51984 8 4.0799 8 5.2V6M10 11.5V16.5M14 11.5V16.5M3 6H21M19 6V17.2C19 18.8802 19 19.7202 18.673 20.362C18.3854 20.9265 17.9265 21.3854 17.362 21.673C16.7202 22 15.8802 22 14.2 22H9.8C8.11984 22 7.27976 22 6.63803 21.673C6.07354 21.3854 5.6146 20.9265 5.32698 20.362C5 19.7202 5 18.8802 5 17.2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+      </div>
+      {shownote && <Newnote onClose={() => setnote(false)} onAddNote={adding} />}
     </>
   )
 }
