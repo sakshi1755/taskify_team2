@@ -9,6 +9,15 @@ body {
     color: black;
     height: 100vh;
 }
+h1 {
+    font-size: 35px;
+}
+h2 {
+    font-size: 25px;
+}
+p {
+    font-size: 15px;
+}
 .container {
     background-color: #f9f9f9;
     padding: 40px;
@@ -20,7 +29,7 @@ body {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 input[type="email"],input[type="password"],input[type="text"] {
-    width: 46%;
+    width: 75%;
     padding: 10px 20px;
     margin: 8px 0;
     background-color: #ffffff;
@@ -29,6 +38,17 @@ input[type="email"],input[type="password"],input[type="text"] {
 }
 .class {
     margin: 8px 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+span {
+    display: flex;
+}
+input[type="checkbox"] {
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
 }
 button {
     background-color: #2563eb;
@@ -36,7 +56,7 @@ button {
     border: none;
     border-radius: 5px;
     padding: 10px;
-    width: 50%;
+    width: 75%;
     margin-top: 10px;
     cursor: pointer;
     margin-bottom: 20px;

@@ -20,6 +20,14 @@ const TaskForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Task created:', formData);
+    addTask(formData);
+    setFormData({
+      title: '',
+      description: '',
+      priority: '2',
+      status: 'todo',
+    });
+    setIsVisible(false);
   };
 
   if (!isVisible) return null;
