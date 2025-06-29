@@ -24,7 +24,7 @@ const TaskPage = () => {
   return (
     <div style={{ padding: "20px" }}>
       <h1>My Tasks</h1>
-      <TaskForm addTask={addTask} />
+      <Taskform addTask={addTask} />
       <ul style={{ marginTop: "20px", listStyle: "none", padding: 0 }}>
         {tasks.map((task, index) => (
           <li

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Taskform.css';
 
-const TaskForm = () => {
+const TaskForm = ({ addTask }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [formData, setFormData] = useState({
     title: '',
