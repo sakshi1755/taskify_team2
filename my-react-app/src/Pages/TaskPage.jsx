@@ -25,19 +25,26 @@ const TaskPage = () => {
     <div style={{ padding: "20px" }}>
       <h1>My Tasks</h1>
       <Taskform addTask={addTask} />
-      <ul style={{ marginTop: "20px", listStyle: "none", padding: 0 }}>
+      <ul style={{ marginTop: "20px", listStyle: "none", padding: 0, backgroundSize: "cover" }}>
         {tasks.map((task, index) => (
           <li
             key={index}
             style={{
               border: "1px solid #ccc",
               borderRadius: "8px",
-              padding: "10px",
-              marginBottom: "10px",
+              padding: "10px 15px 40px 15px",
+              marginBottom: "15px",
               position: "relative",
               background: "#fff",
+              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+              width: "100%",
+              maxWidth: "500px",
+              marginLeft: "auto",
+              marginRight: "auto",
+              wordBreak: "break-word",
             }}
           >
+
             <strong>{task.title}</strong>
             <p>{task.description}</p>
             <small>
@@ -45,18 +52,19 @@ const TaskPage = () => {
             </small>
             <button
               onClick={() => deleteTask(index)}
-              style={{
-                position: "absolute",
-                top: "10px",
-                right: "10px",
-                background: "#ef4444",
-                color: "white",
-                border: "none",
-                padding: "5px 10px",
-                borderRadius: "5px",
-                cursor: "pointer",
-              }}
-            >
+                style={{
+                  position: "absolute",
+                  bottom: "10px",
+                  right: "10px",
+                  background: "#ef4444",
+                  color: "white",
+                  border: "none",
+                  padding: "6px 12px",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  fontSize: "14px"
+                }}
+              >
               Delete
             </button>
           </li>
