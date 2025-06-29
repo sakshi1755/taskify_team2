@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Taskform.css';
 
-const TaskForm = () => {
+const TaskForm = ({ addTask }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [formData, setFormData] = useState({
     title: '',
@@ -20,6 +20,14 @@ const TaskForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Task created:', formData);
+    addTask(formData);
+    setFormData({
+      title: '',
+      description: '',
+      priority: '2',
+      status: 'todo',
+    });
+    setIsVisible(false);
   };
 
   if (!isVisible) return null;
